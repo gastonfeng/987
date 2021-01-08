@@ -1,0 +1,87 @@
+***********************************************************************
+                         PSDsoft Express Version 6.15
+                      Summary of Design Assistant
+***********************************************************************
+PROJECT    : psd311                        DATE : 09/27/2000
+DEVICE     : ZPSD311                       TIME : 16:57:55
+MCU        : 8XC552      
+***********************************************************************
+
+Initial setting for Program and Data Space:
+===========================================
+
+  Memory Space Setting: Program Space Only
+
+Pin Definitions:
+================
+
+Pin          Signal       Pin
+Name         Name         Type
+------------ ------------ ------------
+bhe          _psen        MCU bus control signal
+wr           _wr          MCU bus control signal
+rd           _rd          MCU bus control signal
+a19_csi      a19          Logic       
+reset        reset        Reset input 
+ale          ale          ALE/AS input
+pa0          pa0          Latched addr out - CMOS
+pa1          pa1          Latched addr out - CMOS
+pa2          pa2          Latched addr out - CMOS
+pa3          pa3          Latched addr out - CMOS
+pa4          pa4          Latched addr out - CMOS
+pa5          pa5          Latched addr out - CMOS
+pa6          pa6          Latched addr out - CMOS
+pa7          pa7          Latched addr out - CMOS
+pb0          CS0          Ext chip select - Active-Lo CMOS
+pb1          pb1          MCU I/O mode - CMOS
+pb2          pb2          MCU I/O mode - CMOS
+pb3          pb3          MCU I/O mode - CMOS
+pb4          pb4          MCU I/O mode - CMOS
+pb5          CS5          Ext chip select - Active-Lo CMOS
+pb6          CS6          Ext chip select - Active-Lo CMOS
+pb7          CS7          Ext chip select - Active-Lo CMOS
+pc0          CS8          External chip select - Active-Lo
+pc1          A17          Logic       
+pc2          CS10         External chip select - Active-Lo
+adio0        ad0          Address line
+adio1        ad1          Address line
+adio2        ad2          Address line
+adio3        ad3          Address line
+adio4        ad4          Address line
+adio5        ad5          Address line
+adio6        ad6          Address line
+adio7        ad7          Address line
+adio8        a8           Address line
+adio9        a9           Address line
+adio10       a10          Address line
+adio11       a11          Address line
+adio12       a12          Address line
+adio13       a13          Address line
+adio14       a14          Address line
+adio15       a15          Address line
+
+User defined nodes:
+===================
+
+None defined
+
+Equations:
+==========
+
+rs0 = ((address >= ^h8000) & (address <= ^h87FF));
+csiop = ((address >= ^h9800) & (address <= ^h9FFF));
+es0 = ((address >= ^h0000) & (address <= ^h0FFF));
+es1 = ((address >= ^h1000) & (address <= ^h1FFF));
+es2 = ((address >= ^h2000) & (address <= ^h2FFF));
+es3 = ((address >= ^h3000) & (address <= ^h3FFF));
+es4 = ((address >= ^h4000) & (address <= ^h4FFF));
+es5 = ((address >= ^h5000) & (address <= ^h5FFF));
+es6 = ((address >= ^h6000) & (address <= ^h6FFF));
+es7 = ((address >= ^h7000) & (address <= ^h7FFF));
+! CS0 = ((A17));
+! CS5 = ((a15&!a14&a13&a12&!a11&!ale&!_wr));
+! CS6 = ((!a15 & !ale));
+! CS7 = ((a15 & !a14 & !a13 & a12 & !a11 & !ale & !_rd))
+     # ((a15 & !a14 & !a13 & a12 & !a11 & !ale & !_wr));
+! CS8 = ((a15 & !a14 & !a13 & !a12 & a11 & !ale));
+! CS10 = ((a19));

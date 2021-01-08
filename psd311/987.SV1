@@ -1,0 +1,177 @@
+
+****************************  MAPLE  6.00 ***************************
+
+                        ALIASES                   
+
+/CS8/A16  = CS8
+/CS9/A17  = A17
+/CS10/A18 = CS10
+/CSI/A19  = A19
+*********************************************************************
+
+                  GLOBAL CONFIGURATION         
+
+Address/Data Mode:                               MX
+Data Bus Size:                                   8
+CSI/A19:                                         A19
+Reset Polarity:                                  HI
+ALE Polarity:                                    HI
+WRD/RWE:                                         WRD
+A16-A19 Transparent or Latched by ALE:           T
+Are you using PSEN? Y
+Separate Data and Program address spaces:        Y
+
+*********************************************************************
+
+
+             PORT A CONFIGURATION (Address/IO)  
+
+ Bit No.     Ai/IO.     CMOS/OD.
+    0         A0         CMOS
+    1         A1         CMOS
+    2         A2         CMOS
+    3         A3         CMOS
+    4         A4         CMOS
+    5         A5         CMOS
+    6         A6         CMOS
+    7         A7         CMOS
+
+
+*********************************************************************
+
+
+             PORT B CONFIGURATION             
+
+ Bit No.     CS/IO.     CMOS/OD.
+    0         CS0         CMOS
+    1         IO          CMOS
+    2         IO          CMOS
+    3         IO          CMOS
+    4         IO          CMOS
+    5         CS5         CMOS
+    6         CS6         CMOS
+    7         CS7         CMOS
+
+         CHIP SELECT EQUATIONS        
+
+/CS0 = /( A17) 
+
+/CS5 = /( A15 * /A14 * A13 * A12 * /A11 * / ALE  * / WR ) 
+
+/CS6 = /( /A15 * / ALE ) 
+
+/CS7 = /( A15 * /A14 * /A13 * A12 * /A11 * / ALE  * / RD 
+   + A15 * /A14 * /A13 * A12 * /A11 * / ALE  * / WR ) 
+
+
+
+*********************************************************************
+
+
+             PORT C CONFIGURATION              
+
+ Bit No.     CS/Ai.
+    0         CS8
+    1         A17
+    2         CS10
+
+
+         CHIP SELECT EQUATIONS       
+
+CS8 = /( A15 * /A14 * /A13 * /A12 * A11) 
+
+CS10 = /( A19) 
+
+
+
+*********************************************************************
+
+
+              ADDRESS  MAP                
+
+
+      A  A  A  A  A  A  A  A  A SEGMT  SEGMT   EPROM   EPROM   File Name
+     19 18 17 16 15 14 13 12 11 STRT   STOP    START    STOP          
+ES0   X  N  X  N  0  0  0  0  N                  0       fff     2000.HEX 
+ES1   X  N  X  N  0  0  0  1  N                  1000    1fff    2000.HEX 
+ES2   X  N  X  N  0  0  1  0  N                  2000    2fff    2000.HEX 
+ES3   X  N  X  N  0  0  1  1  N                  3000    3fff    2000.HEX 
+ES4   X  N  X  N  0  1  0  0  N                  4000    4fff    2000.HEX 
+ES5   X  N  X  N  0  1  0  1  N                  5000    5fff    2000.HEX 
+ES6   X  N  X  N  0  1  1  0  N                  6000    6fff    2000.HEX 
+ES7   X  N  X  N  0  1  1  1  N                  7000    7fff    2000.HEX 
+RS0   X  N  X  N  1  0  0  0  0                                                
+CSP   X  N  X  N  1  0  0  1  1                                                
+
+
+******************************    END    ****************************************
+
+
+************************ ADDRESS  MAP (EQUATIONS) *******************************
+
+ES0  = /A15 * /A14 * /A13 * /A12 
+ES1  = /A15 * /A14 * /A13 * A12 
+ES2  = /A15 * /A14 * A13 * /A12 
+ES3  = /A15 * /A14 * A13 * A12 
+ES4  = /A15 * A14 * /A13 * /A12 
+ES5  = /A15 * A14 * /A13 * A12 
+ES6  = /A15 * A14 * A13 * /A12 
+ES7  = /A15 * A14 * A13 * A12 
+RS0  = A15 * /A14 * /A13 * /A12 * /A11 
+CSP  = A15 * /A14 * /A13 * A12 * A11 
+
+******************************    END    ****************************************
+CDATA       = 0
+CADDRDAT    = 1
+CRRWR       = 0
+CA19/(/CSI) = 1
+CALE        = 0
+CRESET      = 1
+COMB/SEP    = 1
+CADDHLT     = 0
+
+
+CPAF2       = 0
+
+
+CPAF1 [0] = 1
+CPAF1 [1] = 1
+CPAF1 [2] = 1
+CPAF1 [3] = 1
+CPAF1 [4] = 1
+CPAF1 [5] = 1
+CPAF1 [6] = 1
+CPAF1 [7] = 1
+
+CPACOD [0] = 0
+CPACOD [1] = 0
+CPACOD [2] = 0
+CPACOD [3] = 0
+CPACOD [4] = 0
+CPACOD [5] = 0
+CPACOD [6] = 0
+CPACOD [7] = 0
+
+CPBF [0] = 0
+CPBF [1] = 1
+CPBF [2] = 1
+CPBF [3] = 1
+CPBF [4] = 1
+CPBF [5] = 0
+CPBF [6] = 0
+CPBF [7] = 0
+
+
+CPBCOD [0] = 0
+CPBCOD [1] = 0
+CPBCOD [2] = 0
+CPBCOD [3] = 0
+CPBCOD [4] = 0
+CPBCOD [5] = 0
+CPBCOD [6] = 0
+CPBCOD [7] = 0
+
+
+CPCF [0] = 1
+CPCF [1] = 0
+CPCF [2] = 1

@@ -1,0 +1,22 @@
+***************************************************************************
+                         PSDsoft Express Version 6.15
+                    Output of Address Translation
+***************************************************************************
+  PROJECT    : psd311                                   DATE : 10/17/2000
+  DEVICE     : ZPSD311                                  TIME : 20:48:44
+***************************************************************************
+
+  Record  Type  : Intel Hex Record 
+  Mapping Mode  : Direct 
+
+  Memory                      Start        Stop        Memory
+  Block                      Address      Address    Data   File 
+--------------------------------------------------------------------------
+  ES0   [00000 - 00FFF]          0          FFF      E:\product\987\C\2000.hex
+  ES1   [01000 - 01FFF]       1000         1FFF      E:\product\987\C\2000.hex
+  ES2   [02000 - 02FFF]       2000         2FFF      E:\product\987\C\2000.hex
+  ES3   [03000 - 03FFF]       3000         3FFF      E:\product\987\C\2000.hex
+  ES4   [04000 - 04FFF]       4000         4FFF      E:\product\987\C\2000.hex
+  ES5   [05000 - 05FFF]       5000         5FFF      E:\product\987\C\2000.hex
+  ES6   [06000 - 06FFF]       6000         6FFF      E:\product\987\C\2000.hex
+  ES7   [07000 - 07FFF]       7000         7FFF      E:\product\987\C\2000.hex

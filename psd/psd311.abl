@@ -1,0 +1,80 @@
+module psd311
+_psen PIN 1;
+_wr PIN 2;
+_rd PIN 22;
+a19 PIN 43;
+reset PIN 3;
+ale PIN 13; "ALE/AS input
+pa0 PIN 21; "Latched address out - CMOS
+pa1 PIN 20; "Latched address out - CMOS
+pa2 PIN 19; "Latched address out - CMOS
+pa3 PIN 18; "Latched address out - CMOS
+pa4 PIN 17; "Latched address out - CMOS
+pa5 PIN 16; "Latched address out - CMOS
+pa6 PIN 15; "Latched address out - CMOS
+pa7 PIN 14; "Latched address out - CMOS
+CS0 PIN 11; "CMOS output
+pb1 PIN 10; "MCU I/O - CMOS
+pb2 PIN 9; "MCU I/O - CMOS
+pb3 PIN 8; "MCU I/O - CMOS
+pb4 PIN 7; "MCU I/O - CMOS
+CS5 PIN 6; "CMOS output
+CS6 PIN 5; "CMOS output
+CS7 PIN 4; "CMOS output
+CS8 PIN 40;
+A17 PIN 41;
+CS10 PIN 42;
+a11 PIN 35; "Address line
+a12 PIN 36; "Address line
+a13 PIN 37; "Address line
+a14 PIN 38; "Address line
+a15 PIN 39; "Address line
+rs0 node;
+csiop node;
+es0 node;
+es1 node;
+es2 node;
+es3 node;
+es4 node;
+es5 node;
+es6 node;
+es7 node;
+
+X = .x.;
+address = [a15..a11,X,X,X,X,X,X,X,X,X,X,X];
+Vcc = 1;
+Gnd = 0;
+
+
+// Begin user preserved declarations (not affected by iterations of DA usage) ===================
+
+// End user preserved declarations (not affected by iterations of DA usage) ===================
+
+
+
+equations
+
+rs0 = ((address >= ^h8000) & (address <= ^h87FF));
+csiop = ((address >= ^h9800) & (address <= ^h9FFF));
+es0 = ((address >= ^h0000) & (address <= ^h0FFF));
+es1 = ((address >= ^h1000) & (address <= ^h1FFF));
+es2 = ((address >= ^h2000) & (address <= ^h2FFF));
+es3 = ((address >= ^h3000) & (address <= ^h3FFF));
+es4 = ((address >= ^h4000) & (address <= ^h4FFF));
+es5 = ((address >= ^h5000) & (address <= ^h5FFF));
+es6 = ((address >= ^h6000) & (address <= ^h6FFF));
+es7 = ((address >= ^h7000) & (address <= ^h7FFF));
+! CS0 = ((A17));
+! CS5 = ((a15&!a14&a13&a12&!a11&!ale&!_wr));
+! CS6 = ((!a15 & !ale));
+! CS7 = ((a15 & !a14 & !a13 & a12 & !a11 & !ale & !_rd))
+     # ((a15 & !a14 & !a13 & a12 & !a11 & !ale & !_wr));
+! CS8 = ((a15 & !a14 & !a13 & !a12 & a11 & !ale));
+! CS10 = ((a19));
+
+
+// Begin user preserved equations (not affected by iterations of DA usage) ===================
+
+// End user preserved equations (not affected by iterations of DA usage) ===================
+
+end psd311

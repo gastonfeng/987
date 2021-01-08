@@ -1,0 +1,5 @@
+"2000.obj",
+"Sbuf.obj" 
+TO "2000" 
+RAMSIZE(256) 
+XDATA( 0X8000-0X87FF )

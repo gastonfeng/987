@@ -1,0 +1,56 @@
+ ***************************************************************************
+                        PSDsoft Express Version 6.15
+                    Output of PSD Configurations
+ ***************************************************************************
+  PROJECT    : psd311                         DATE : 09/26/2000
+  DEVICE     : ZPSD311                        TIME : 18:13:11
+ ***************************************************************************
+
+
+ ==== Bus Interface ==== 
+
+ Data Bus Width                                                    = 8-Bit 
+ Address/Data Mode                                                 = Multiplexed 
+ ALE/AS Signal                                                     = Active High 
+ Control Signals                                                   = /WR,/RD,/PSEN 
+ Memory space setting for EPROM = Program space only (/PSEN) 
+ Power-Down Capability                                             = OFF 
+ Active-Level of RESET Signal   = HIGH 
+
+ 
+
+ ==== Other Configurations ====  
+
+ Security Protection                      = OFF 
+ Enable EPROM/SRAM low power mode(CMISER) = OFF 
+ 
+
+ ==== Port A Configurations ====  
+
+ ADDRESS/IO Mode  
+
+   Pin      IO/Address   CMOS/OD Output 
+  --------------------------------------
+   PA0      A0             CMOS  
+   PA1      A1             CMOS  
+   PA2      A2             CMOS  
+   PA3      A3             CMOS  
+   PA4      A4             CMOS  
+   PA5      A5             CMOS  
+   PA6      A6             CMOS  
+   PA7      A7             CMOS  
+ 
+
+ ==== Port B Configurations ====  
+
+   Pin                 CMOS/OD Output 
+  ------------------------------------
+   PB0                     CMOS  
+   PB1                     CMOS  
+   PB2                     CMOS  
+   PB3                     CMOS  
+   PB4                     CMOS  
+   PB5                     CMOS  
+   PB6                     CMOS  
+   PB7                     CMOS  
+

@@ -1,0 +1,37 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Target 1), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),0,0,0
+
+OPTFFF 1,1,1,0,0,546,551,0,<.\2000.c><2000.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,233,255,255,255,66,0,0,0,66,0,0,0,218,2,0,0,42,1,0,0 }
+OPTFFF 1,2,1,0,0,161,172,0,<.\Sbuf.c><Sbuf.c> { 44,0,0,0,2,0,0,0,3,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,233,255,255,255,22,0,0,0,22,0,0,0,66,3,0,0,91,1,0,0 }
+
+
+TARGOPT 1, (Target 1)
+ CLK51=11059200
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 0,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\8XC552.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p552)(S8051.DLL)()(TP51.DLL)(-p552)
+  OPTDBG 509,0,()()()()(E:\Keil\Tools.ini)()()()()() ()()()()
+  OPTMM 1,0,(C:0x1f9f)
+  OPTDF 0x81
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

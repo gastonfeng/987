@@ -1,0 +1,178 @@
+********************************************************************************
+                          PSDsoft Express Version 6.15
+                              Output of PSD Fitter
+********************************************************************************
+  PROJECT    : psd311                           DATE : 10/17/2000
+  DEVICE     : ZPSD311                          TIME : 20:48:14
+  FIT OPTION : Keep Previous
+  DESCRIPTION: 数据采集器，2000.9.13
+ 
+********************************************************************************
+
+                     ==== Pin Layout for PLCC/CLDCC Package Type ====
+
+                                  ----------------------
+                                 |                      |
+                           _psen |1 ] psen     adio0 [23| Address/Data Bus ADIO_0
+                             _wr |2 ] wr       adio1 [24| Address/Data Bus ADIO_1
+                           reset |3 ] reset    adio2 [25| Address/Data Bus ADIO_2
+                             CS7 |4 ] pb7      adio3 [26| Address/Data Bus ADIO_3
+                             CS6 |5 ] pb6      adio4 [27| Address/Data Bus ADIO_4
+                             CS5 |6 ] pb5      adio5 [28| Address/Data Bus ADIO_5
+                             pb4 |7 ] pb4      adio6 [29| Address/Data Bus ADIO_6
+                             pb3 |8 ] pb3      adio7 [30| Address/Data Bus ADIO_7
+                             pb2 |9 ] pb2      adio8 [31| Address Bus ADIO_8
+                             pb1 |10] pb1      adio9 [32| Address Bus ADIO_9
+                             CS0 |11] pb0     adio10 [33| Address Bus ADIO_10
+                                 |12] GND        GND [34| 
+                             ale |13] ale     adio11 [35| Address Bus ADIO_11 (a11)
+           Address Line A7 (pa7) |14] pa7     adio12 [36| Address Bus ADIO_12 (a12)
+           Address Line A6 (pa6) |15] pa6     adio13 [37| Address Bus ADIO_13 (a13)
+           Address Line A5 (pa5) |16] pa5     adio14 [38| Address Bus ADIO_14 (a14)
+           Address Line A4 (pa4) |17] pa4     adio15 [39| Address Bus ADIO_15 (a15)
+           Address Line A3 (pa3) |18] pa3        pc0 [40| CS8
+           Address Line A2 (pa2) |19] pa2        pc1 [41| A17
+           Address Line A1 (pa1) |20] pa1        pc2 [42| CS10
+           Address Line A0 (pa0) |21] pa0    a19/csi [43| a19
+                             _rd |22] rd         VCC [44| 
+                                 |                      |
+                                  ----------------------
+
+                        ==== Pin Layout for TQFP Package Type ====
+
+Pin  1 = pb4                                       Pin 23 = Address/Data Bus ADIO_6
+Pin  2 = pb3                                       Pin 24 = Address/Data Bus ADIO_7
+Pin  3 = pb2                                       Pin 25 = Address Bus ADIO_8
+Pin  4 = pb1                                       Pin 26 = Address Bus ADIO_9
+Pin  5 = CS0                                       Pin 27 = Address Bus ADIO_10
+Pin  6 =                                           Pin 28 = 
+Pin  7 = ale                                       Pin 29 = Address Bus ADIO_11 (a11)
+Pin  8 = Address Line A7 (pa7)                     Pin 30 = Address Bus ADIO_12 (a12)
+Pin  9 = Address Line A6 (pa6)                     Pin 31 = Address Bus ADIO_13 (a13)
+Pin 10 = Address Line A5 (pa5)                     Pin 32 = Address Bus ADIO_14 (a14)
+Pin 11 = Address Line A4 (pa4)                     Pin 33 = Address Bus ADIO_15 (a15)
+Pin 12 = Address Line A3 (pa3)                     Pin 34 = CS8
+Pin 13 = Address Line A2 (pa2)                     Pin 35 = A17
+Pin 14 = Address Line A1 (pa1)                     Pin 36 = CS10
+Pin 15 = Address Line A0 (pa0)                     Pin 37 = a19
+Pin 16 = _rd                                       Pin 38 = 
+Pin 17 = Address/Data Bus ADIO_0                   Pin 39 = _psen
+Pin 18 = Address/Data Bus ADIO_1                   Pin 40 = _wr
+Pin 19 = Address/Data Bus ADIO_2                   Pin 41 = reset
+Pin 20 = Address/Data Bus ADIO_3                   Pin 42 = CS7
+Pin 21 = Address/Data Bus ADIO_4                   Pin 43 = CS6
+Pin 22 = Address/Data Bus ADIO_5                   Pin 44 = CS5
+
+
+       ==== Global Configuration ====
+
+ Data Bus :                          8-bit Multiplexed
+ Reset Polarity :                    HIGH
+ ALE/AS Signal :                     ACTIVE HIGH
+ Security Protection :               OFF
+ Power-down capability (/CSI) :      Not Used
+ EPROM low power mode (CMISER) :     DISABLE
+
+       ==== Other Configuration ===
+
+ Port A :
+
+  Pin       IO/Address               Output Type
+ ---------------------------------------------------
+  PA0        Address                 CMOS
+  PA1        Address                 CMOS
+  PA2        Address                 CMOS
+  PA3        Address                 CMOS
+  PA4        Address                 CMOS
+  PA5        Address                 CMOS
+  PA6        Address                 CMOS
+  PA7        Address                 CMOS
+
+ Port B :
+
+  Pin       IO/Chip Select Output    Output Type
+ ---------------------------------------------------
+  PB0        Chip Select Output      CMOS
+  PB1        IO                      CMOS
+  PB2        IO                      CMOS
+  PB3        IO                      CMOS
+  PB4        IO                      CMOS
+  PB5        Chip Select Output      CMOS
+  PB6        Chip Select Output      CMOS
+  PB7        Chip Select Output      CMOS
+
+ Port C :
+
+  Pin       Input/Output             Address/Logic
+ --------------------------------------------------
+  PC0       Output
+  PC1       Input                    Logic   Input
+  PC2       Output
+
+
+      ==== Address & Data Bus Assignment ====
+
+ Stimulus Bus Name     Signal Description
+ ---------------------------------------------------------
+ `adiol = adio[7:0]  = Address/Data Bus ADIO_7  - ADIO_0
+ `adioh = adio[15:8] = Address Bus ADIO_15 - ADIO_8
+  adio  = adio[15:0] = Address/Data Bus ADIO_15 - ADIO_0
+
+
+      ===== Resource Usage Summary =====
+
+ Device Resources                 used / total  Percentage
+ ---------------------------------------------------------
+ Port A: (pin 14 - pin 21)
+    I/O Pins                        8  / 8    100        %
+      MCU I/O                       0         0          %
+      Address Out                   8         100        %
+      Data Port (Non-Mux Bus)       0         0          %
+      Track Mode                    0         0          %
+
+ Port B: (pin 4 - pin 11)
+    I/O Pins                        8  / 8    100        %
+      MCU I/O                       4         50         %
+      PLD Output                    4         50         %
+      Data Port (16 bit Non-Mux Bus)0         0          %
+
+ Port C: (pin 40 - pin 42)
+    I/O Pins                        3  / 3    100        %
+      PLD Input                     1         33         %
+      PLD Output                    2         66         %
+
+
+
+       ========= Equations =========
+
+ DPLD      EQUATIONS :
+ ===================
+  es0 =  !a15 & !a14 & !a13 & !a12;
+  es1 =  !a15 & !a14 & !a13 & a12;
+  es2 =  !a15 & !a14 & a13 & !a12;
+  es3 =  !a15 & !a14 & a13 & a12;
+  es4 =  !a15 & a14 & !a13 & !a12;
+  es5 =  !a15 & a14 & !a13 & a12;
+  es6 =  !a15 & a14 & a13 & !a12;
+  es7 =  !a15 & a14 & a13 & a12;
+  rs0 =  a15 & !a14 & !a13 & !a12 & !a11;
+  csiop =  a15 & !a14 & !a13 & a12 & a11;
+
+ PORT B    EQUATIONS :
+ ===================
+ !CS0 =  A17;
+
+ !CS5 =  a15 & !a14 & a13 & a12 & !a11 & !ale & !_wr;
+
+ !CS6 =  !a15 & !ale;
+
+ !CS7 =  a15 & !a14 & !a13 & a12 & !a11 & !ale & !_wr
+      #  a15 & !a14 & !a13 & a12 & !a11 & !ale & !_rd;
+
+
+ PORT C    EQUATIONS :
+ ===================
+ !CS8 =  a15 & !a14 & !a13 & !a12 & a11 & !ale;
+
+ !CS10 =  a19;
+
